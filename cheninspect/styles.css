@@ -322,6 +322,11 @@ img {
   letter-spacing: -0.01em;
 }
 
+/* 避免手機版在任意字元間斷行，只允許在語意詞組之間換行 */
+.nobr {
+  white-space: nowrap;
+}
+
 /* 價值主張：接在平台名下，稍小一階 */
 .hero-headline {
   max-width: 620px;
@@ -2008,6 +2013,7 @@ h3 {
 }
 
 .risk-grid article {
+  position: relative;
   display: grid;
   gap: 8px;
   min-height: auto;
@@ -2044,6 +2050,7 @@ h3 {
 }
 
 .risk-grid h4 {
+  margin: 0;
   font-size: 24px;
   line-height: 1.2;
 }
@@ -2125,9 +2132,11 @@ h3 {
 }
 
 .risk-cite {
+  position: absolute;
+  top: 18px;
+  right: 16px;
   display: inline-flex;
   width: fit-content;
-  margin-top: 4px;
   padding: 6px 10px;
   color: #5f675d;
   background: rgba(47, 49, 51, 0.05);
@@ -4768,7 +4777,7 @@ textarea {
     grid-column: span 1;
   }
 
-  .problem-grid article {
+  .problem-grid article:nth-child(n) {
     grid-column: span 1;
   }
 
