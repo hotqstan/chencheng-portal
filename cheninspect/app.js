@@ -40,7 +40,7 @@ if (tabs) {
 // 動態版權年份
 const footerYear = document.getElementById("footer-year");
 if (footerYear) {
-  footerYear.textContent = `© ${new Date().getFullYear()} ChenInspect. All rights reserved.`;
+  footerYear.textContent = `© ${new Date().getFullYear()} 宸鑑. All rights reserved.`;
 }
 
 const contactForm = document.querySelector("[data-contact-form]");
