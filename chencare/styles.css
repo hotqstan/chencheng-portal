@@ -4912,6 +4912,16 @@ textarea {
 .pillars article:nth-child(3) { border-top-color: var(--coral); }
 .pillars article:nth-child(4) { border-top-color: var(--plum); }
 
+.pillar-icon {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 0 16px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--crystal-shadow);
+}
+
 .pillars h3 {
   margin: 0 0 8px;
   font-size: 17px;
@@ -4982,6 +4992,63 @@ textarea {
 
 @media (max-width: 680px) {
   .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 為什麼企業需要宸護（雙欄，附圖）── */
+.importance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.importance-card {
+  padding: 28px 26px;
+  background: var(--crystal-bg);
+  border: var(--crystal-border);
+  border-top: 3px solid var(--brand);
+  border-radius: 14px;
+  box-shadow: var(--crystal-shadow);
+  backdrop-filter: blur(20px) saturate(148%);
+}
+
+.importance-card:nth-child(2) { border-top-color: var(--sage); }
+
+.importance-icon {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin: 0 0 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--crystal-shadow);
+}
+
+.importance-card span {
+  display: inline-block;
+  margin: 0 0 10px;
+  color: var(--brand-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.importance-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.importance-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+@media (max-width: 680px) {
+  .importance-grid {
     grid-template-columns: 1fr;
   }
 }
