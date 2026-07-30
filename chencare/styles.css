@@ -4,7 +4,7 @@
   --brand-soft: #f2e6c6;
   --paper: #f8faf6;
   --text: #2f3133;
-  --muted: #6e746b;
+  --muted: #5a5f58;
   --line: #d9ded5;
   --white: #ffffff;
   --clay: #b86f52;
@@ -19,6 +19,14 @@
   --sage-soft: #e5ecdf;
   --graphite: #3b4048;
   --graphite-soft: #eef0ed;
+
+  /* v2 草稿：陽光活力（vitality）共用色票 */
+  --vital-sun-1: #ffe08a;
+  --vital-sun-2: #ff9f43;
+  --vital-green-1: #d6f5df;
+  --vital-green-2: #34c38f;
+  --vital-green-dark: #1f7a56;
+  --vital-ink: #22453a;
   --shadow: 0 22px 60px rgba(47, 49, 51, 0.1);
   --shadow-lg: 0 32px 80px rgba(47, 49, 51, 0.16);
   --glass: rgba(255, 255, 255, 0.58);
@@ -354,6 +362,7 @@ h2 {
   font-size: clamp(28px, 3.4vw, 46px);
   line-height: 1.18;
   font-weight: 930;
+  text-wrap: balance;
 }
 
 h3 {
@@ -816,6 +825,11 @@ h3 {
   gap: 16px;
 }
 
+.scope-grid--single {
+  grid-template-columns: minmax(0, 480px);
+  justify-content: center;
+}
+
 .scope-grid article {
   padding: 26px 24px 24px;
   background: var(--crystal-bg);
@@ -1002,6 +1016,287 @@ h3 {
 
 .system-scope {
   background: linear-gradient(180deg, #fff 0%, rgba(251, 248, 241, 0.72) 100%);
+}
+
+/* ── Hero v2：陽光活力（hero--vitality）───── */
+.hero--vitality {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 480px);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  min-height: auto;
+  padding: clamp(120px, 12vw, 168px) clamp(20px, 5vw, 76px) clamp(72px, 8vw, 108px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255, 224, 138, 0.65), transparent 42%),
+    radial-gradient(circle at 100% 12%, rgba(255, 159, 67, 0.28), transparent 38%),
+    radial-gradient(circle at 78% 92%, rgba(52, 195, 143, 0.22), transparent 40%),
+    linear-gradient(165deg, #fffdf6 0%, #fef9ec 38%, #eafbf1 100%);
+}
+
+.hero--vitality::before {
+  content: none;
+}
+
+.hero-vitality-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.signature--vital {
+  color: var(--vital-ink);
+  background: linear-gradient(135deg, var(--vital-sun-1), #fff6df);
+  border-color: rgba(255, 159, 67, 0.45);
+}
+
+.hero-vitality-title {
+  max-width: 620px;
+  margin: 0 0 18px;
+  font-size: clamp(36px, 4.4vw, 58px);
+  line-height: 1.16;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: var(--vital-ink);
+}
+
+.hero-vitality-lede {
+  max-width: 560px;
+  margin: 0 0 14px;
+  color: #3d5c50;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-vitality-sub {
+  max-width: 540px;
+  margin: 0 0 32px;
+  color: #5c7267;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.hero-vitality-actions {
+  margin: 0;
+}
+
+.button.vital-primary {
+  color: #4a2a00;
+  background: linear-gradient(135deg, var(--vital-sun-1) 0%, var(--vital-sun-2) 100%);
+  border-radius: 999px;
+  box-shadow: 0 14px 32px rgba(255, 159, 67, 0.38), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+}
+
+.button.vital-primary:hover {
+  box-shadow: 0 18px 40px rgba(255, 159, 67, 0.48), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  transform: translateY(-1px);
+}
+
+.button.vital-secondary {
+  color: var(--vital-ink);
+  background: #fff;
+  border: 1px solid rgba(52, 195, 143, 0.35);
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(52, 195, 143, 0.14);
+}
+
+.button.vital-secondary:hover {
+  background: var(--vital-green-1);
+  transform: translateY(-1px);
+}
+
+/* ── 視覺區：太陽光暈 + 有機造型照片 + 浮動標籤 ── */
+.hero-vitality-visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+}
+
+.hero-vitality-sun {
+  position: absolute;
+  top: -8%;
+  right: -6%;
+  width: min(70vw, 480px);
+  height: min(70vw, 480px);
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 176, 59, 0.5) 0deg 6deg,
+    rgba(255, 176, 59, 0) 6deg 18deg
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-vitality-photo-frame {
+  position: relative;
+  z-index: 2;
+  width: min(86%, 420px);
+  aspect-ratio: 1 / 1.05;
+  overflow: hidden;
+  border: 6px solid #fff;
+  border-radius: 44% 56% 61% 39% / 41% 45% 55% 59%;
+  box-shadow: 0 28px 60px rgba(34, 69, 58, 0.18);
+}
+
+.hero-vitality-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 90% 20%;
+}
+
+.hero-vitality-chip {
+  position: absolute;
+  z-index: 3;
+  max-width: 220px;
+  padding: 12px 18px;
+  color: var(--vital-ink);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 16px 34px rgba(34, 69, 58, 0.14);
+}
+
+.hero-vitality-chip--tl {
+  top: 4%;
+  left: -4%;
+  background: linear-gradient(135deg, var(--vital-green-1), #fff);
+}
+
+.hero-vitality-chip--br {
+  right: -6%;
+  bottom: 10%;
+  max-width: 240px;
+  background: linear-gradient(135deg, #fff6df, #fff);
+}
+
+@media (max-width: 900px) {
+  .hero--vitality {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-vitality-visual {
+    min-height: 380px;
+    order: -1;
+  }
+
+  .hero-vitality-photo-frame {
+    width: min(70%, 320px);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-vitality-chip {
+    max-width: 168px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .hero-vitality-chip--tl {
+    left: 0;
+  }
+
+  .hero-vitality-chip--br {
+    right: 0;
+  }
+}
+
+/* ── 第二區 v2：延續陽光活力視覺語言（pain-vitality）───── */
+.pain-vitality {
+  position: relative;
+  background: linear-gradient(180deg, #eafbf1 0%, #fffdf6 100%);
+}
+
+.eyebrow--vital {
+  color: var(--vital-green-dark);
+}
+
+.pain-vitality-title {
+  color: var(--vital-ink);
+}
+
+.pain-vitality-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.pain-vitality-copy p {
+  margin: 0 0 16px;
+  color: #3d5c50;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.pain-vitality-copy p:last-child {
+  margin-bottom: 0;
+  font-weight: 800;
+  color: var(--vital-ink);
+}
+
+.pain-vitality-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pain-vitality-checklist li {
+  position: relative;
+  padding: 14px 18px 14px 42px;
+  color: var(--vital-ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(34, 69, 58, 0.08);
+}
+
+.pain-vitality-checklist li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, var(--vital-sun-2), var(--vital-green-2));
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.pain-vitality-resolve {
+  max-width: 760px;
+  margin: clamp(40px, 6vw, 64px) auto 0;
+  padding: clamp(22px, 3vw, 30px) clamp(24px, 4vw, 40px);
+  text-align: center;
+  background: linear-gradient(135deg, var(--vital-sun-1), var(--vital-green-1));
+  border-radius: 24px;
+  box-shadow: 0 20px 44px rgba(52, 195, 143, 0.18);
+}
+
+.pain-vitality-resolve p {
+  margin: 0;
+  color: var(--vital-ink);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .pain-vitality-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Sections ──────────────────────────────── */
@@ -4914,12 +5209,22 @@ textarea {
 
 .pillar-icon {
   display: block;
-  width: 96px;
-  height: 96px;
-  margin: 0 0 16px;
+  width: 64px;
+  height: 64px;
+  margin: 0 0 14px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--crystal-shadow);
+}
+
+.pillar-icon--shot {
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--paper);
+  box-shadow: none;
+  border: 1px solid var(--line);
 }
 
 .pillars h3 {
@@ -5017,14 +5322,55 @@ textarea {
 
 .importance-card:nth-child(2) { border-top-color: var(--sage); }
 
+.case-note {
+  max-width: 720px;
+  margin: 28px auto 0;
+  padding: 20px 24px;
+  background: var(--crystal-bg);
+  border: var(--crystal-border);
+  border-left: 3px solid var(--clay);
+  border-radius: 12px;
+  box-shadow: var(--crystal-shadow);
+}
+
+.case-note span {
+  display: inline-block;
+  margin: 0 0 8px;
+  color: var(--clay);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.case-note p {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.case-note p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
 .importance-icon {
   display: block;
-  width: 112px;
-  height: 112px;
-  margin: 0 0 18px;
+  width: 72px;
+  height: 72px;
+  margin: 0 0 16px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--crystal-shadow);
+}
+
+.importance-icon--shot {
+  width: 100%;
+  height: 170px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--paper);
+  box-shadow: none;
+  border: 1px solid var(--line);
 }
 
 .importance-card span {
@@ -5050,6 +5396,97 @@ textarea {
 @media (max-width: 680px) {
   .importance-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ── 系統畫面（三欄截圖）── */
+.screens-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.screens-grid figure {
+  margin: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--crystal-bg);
+  border: var(--crystal-border);
+  border-radius: 14px;
+  box-shadow: var(--crystal-shadow);
+  backdrop-filter: blur(20px) saturate(148%);
+}
+
+.screens-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: var(--paper);
+  border-radius: 8px;
+}
+
+.screens-grid figcaption strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.screens-grid figcaption span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.screens-note {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .screens-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 人物情境照（雙欄，圖+文）── */
+.people-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.people-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.people-caption p {
+  color: #596158;
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+@media (max-width: 860px) {
+  .people-band {
+    grid-template-columns: 1fr;
+  }
+  .people-photo {
+    order: -1;
   }
 }
 
@@ -5091,4 +5528,482 @@ textarea {
   font-size: 14px;
   font-weight: 900;
   line-height: 1.6;
+}
+/* ── v2 草稿：03～11 共用陽光活力元件 ───── */
+.vitality-heading {
+  color: var(--vital-ink);
+}
+
+/* 流程／步驟共用元件（03 宸護如何運作、09 導入方式） */
+.process-vitality,
+.onboarding-vitality,
+.stakeholders-vitality {
+  background: linear-gradient(180deg, #fffdf6 0%, #eafbf1 100%);
+}
+
+.vflow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.vflow-step {
+  position: relative;
+  flex: 1 1 200px;
+  max-width: 240px;
+  padding: 22px 20px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(34, 69, 58, 0.08);
+}
+
+.vflow-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--vital-sun-2), var(--vital-green-2));
+  border-radius: 50%;
+}
+
+.vflow-step h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: var(--vital-ink);
+}
+
+.vflow-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.vflow-summary {
+  max-width: 900px;
+  margin: clamp(32px, 5vw, 48px) auto 0;
+  color: var(--vital-green-dark);
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* 04 三個核心價值：延續陽光活力色調 */
+.pillars--vitality {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pillars--vitality article:nth-child(1) { border-top-color: var(--vital-sun-2); }
+.pillars--vitality article:nth-child(2) { border-top-color: var(--vital-green-2); }
+.pillars--vitality article:nth-child(3) { border-top-color: var(--vital-ink); }
+
+.pillars--vitality .pillar-quote {
+  margin-top: 10px;
+  color: var(--vital-green-dark);
+  font-weight: 800;
+}
+
+@media (max-width: 980px) {
+  .pillars--vitality {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .pillars--vitality {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 05 主要功能總覽：截圖卡片 */
+.feature-card.feature-card--vitality {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  border-top: none;
+  box-shadow: 0 10px 28px rgba(34, 69, 58, 0.1);
+  backdrop-filter: none;
+}
+
+.feature-card.feature-card--vitality:hover {
+  box-shadow: 0 14px 36px rgba(34, 69, 58, 0.16);
+}
+
+.feature-card--vitality .feature-shot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-card--vitality:nth-child(odd) .feature-shot {
+  background: linear-gradient(135deg, var(--vital-sun-1), var(--vital-sun-2));
+}
+
+.feature-card--vitality:nth-child(even) .feature-shot {
+  background: linear-gradient(135deg, var(--vital-green-1), var(--vital-green-2));
+}
+
+.feature-shot-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(34, 69, 58, 0.22);
+  transition: transform 0.25s ease;
+}
+
+/* 讓截圖卡片像貼歪的拍立得，少一點制式的整齊感 */
+.feature-card--vitality:nth-child(odd) .feature-shot-frame {
+  transform: rotate(-1.6deg);
+}
+
+.feature-card--vitality:nth-child(even) .feature-shot-frame {
+  transform: rotate(1.6deg);
+}
+
+.feature-card--vitality:hover .feature-shot-frame {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.feature-shot--split .feature-shot-half:first-child .feature-shot-frame {
+  transform: rotate(-2.4deg);
+}
+
+.feature-shot--split .feature-shot-half:last-child .feature-shot-frame {
+  transform: rotate(2.4deg);
+}
+
+.feature-card--vitality:hover .feature-shot--split .feature-shot-frame {
+  transform: rotate(0deg);
+}
+
+.feature-card--vitality .feature-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* 一張卡放兩張圖並排（例如：職護與職醫訪談） */
+.feature-shot--split {
+  gap: 10px;
+}
+
+.feature-shot--split .feature-shot-half {
+  position: relative;
+  flex: 1 1 50%;
+  height: 100%;
+}
+
+.feature-shot--split .feature-shot-half .feature-shot-frame {
+  padding: 6px;
+}
+
+/* 在截圖上標記一個已排定的重點（例如：臨場服務排程） */
+.feature-shot-spotlight {
+  position: absolute;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.feature-shot-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 159, 67, 0.55) 0%, rgba(255, 159, 67, 0.22) 45%, rgba(255, 159, 67, 0) 72%);
+}
+
+.feature-shot-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 159, 67, 0.9);
+  animation: feature-shot-spotlight-pulse 2.2s ease-out infinite;
+}
+
+@keyframes feature-shot-spotlight-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+.feature-card--vitality .feature-body {
+  padding: 18px 20px 22px;
+}
+
+.feature-card--vitality .feature-body h3 {
+  margin: 0 0 8px;
+  color: var(--vital-ink);
+  font-size: 16px;
+}
+
+.feature-card--vitality .feature-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.placeholder-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  color: #7a4a00;
+  font-size: 11px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--vital-sun-1), #fff3d6);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(255, 159, 67, 0.28);
+}
+
+/* 06 三方價值 */
+.stakeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.stakeholder-card {
+  padding: 26px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(34, 69, 58, 0.08);
+}
+
+.stakeholder-role {
+  margin: 0 0 10px;
+  color: var(--vital-green-dark);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.stakeholder-card p:last-child {
+  margin: 0;
+  color: #3d5c50;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .stakeholder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 07 與既有工具的差異：完整比較表 */
+.compare-table-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(34, 69, 58, 0.08);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 16px 20px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.compare-table th {
+  color: var(--vital-green-dark);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.compare-table td:first-child {
+  font-weight: 800;
+  color: var(--vital-ink);
+  white-space: nowrap;
+}
+
+.compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table tr.is-chencare {
+  background: linear-gradient(135deg, rgba(255, 224, 138, 0.35), rgba(214, 245, 223, 0.55));
+}
+
+.compare-table tr.is-chencare td {
+  color: var(--vital-ink);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .compare-table thead {
+    display: none;
+  }
+
+  .compare-table,
+  .compare-table tbody,
+  .compare-table tr,
+  .compare-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .compare-table tr {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .compare-table td {
+    padding: 4px 0;
+    border-bottom: none;
+  }
+
+  .compare-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    color: var(--vital-green-dark);
+    font-size: 11px;
+    font-weight: 900;
+  }
+}
+
+/* 08 資料安全與角色權限 */
+.security-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+  margin: clamp(28px, 4vw, 40px) auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.security-checklist li {
+  position: relative;
+  padding: 14px 18px 14px 42px;
+  color: var(--vital-ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(34, 69, 58, 0.08);
+}
+
+.security-checklist li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: var(--vital-green-dark);
+}
+
+/* 11 最終行動入口：完整表單 */
+.cta-vitality {
+  background: linear-gradient(165deg, #fef9ec 0%, #eafbf1 100%);
+}
+
+.cta-vitality-panel {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-vitality-form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 36px);
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 48px rgba(34, 69, 58, 0.1);
+}
+
+.cta-vitality-form input:focus,
+.cta-vitality-form select:focus {
+  border-color: var(--vital-green-2);
+  box-shadow: 0 0 0 3px rgba(52, 195, 143, 0.18);
+}
+
+.cta-vitality-actions {
+  margin: 4px 0 0;
+}
+
+/* 大弧線分區裝飾（陽光活力配色版，取代插畫式弧線分隔） */
+.section-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: clamp(48px, 7vw, 100px);
+  line-height: 0;
+  pointer-events: none;
+}
+
+.section-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 柔化弧線底部與下一區塊交界的硬邊 */
+.section-wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(234, 251, 241, 0), rgba(234, 251, 241, 0.9));
 }

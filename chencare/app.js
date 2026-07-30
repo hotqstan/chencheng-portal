@@ -43,22 +43,16 @@ if (footerYear) {
   footerYear.textContent = `© ${new Date().getFullYear()} 宸護. All rights reserved.`;
 }
 
-// 上線通知表單：透過 Google Apps Script Web App 以 Gmail 寄出（與 chencheng-portal 共用同一部署與信箱）
+// 預約系統展示表單：透過 Google Apps Script Web App 以 Gmail 寄出（與 chencheng-portal 共用同一部署與信箱）
 const CONTACT_GMAIL_WEB_APP_URL =
   "https://script.google.com/macros/s/AKfycbyWVvcsukxD0FDGqWP-DTjpXX7TYlci0Ey7HI1EfQB7tQLN3QoWBU22Ttt1FXOgB58/exec";
 const CONTACT_MAILTO = "chenchengtech.co@gmail.com";
 
-async function postNotifyToGmailAppsScript(data) {
-  const params = new URLSearchParams({
-    name: "（尚未提供）",
-    company: "（尚未提供）",
-    email: data.email,
-    topic: "[宸護上線通知] 訂閱上線通知",
-    message: `使用者留下 Email 訂閱宸護上線通知：${data.email}`,
-  });
+async function postLeadToGmailAppsScript(params) {
+  const body = new URLSearchParams(params);
 
   try {
-    const res = await fetch(CONTACT_GMAIL_WEB_APP_URL, { method: "POST", body: params });
+    const res = await fetch(CONTACT_GMAIL_WEB_APP_URL, { method: "POST", body });
     if (res.ok) {
       try {
         const json = JSON.parse(await res.text());
@@ -72,40 +66,50 @@ async function postNotifyToGmailAppsScript(data) {
   }
 
   try {
-    await fetch(CONTACT_GMAIL_WEB_APP_URL, { method: "POST", body: params, mode: "no-cors" });
+    await fetch(CONTACT_GMAIL_WEB_APP_URL, { method: "POST", body, mode: "no-cors" });
     return true;
   } catch (_) {
     return false;
   }
 }
 
-const notifyForm = document.querySelector("[data-notify-form]");
-const notifyStatus = document.querySelector("[data-notify-status]");
+const leadForm = document.querySelector("[data-lead-form]");
+const leadStatus = document.querySelector("[data-lead-status]");
 
-if (notifyForm && notifyStatus) {
-  const submitButton = notifyForm.querySelector('button[type="submit"]');
+if (leadForm && leadStatus) {
+  const submitButton = leadForm.querySelector('button[type="submit"]');
   const submitDefaultLabel = submitButton ? submitButton.textContent : "";
 
-  notifyForm.addEventListener("submit", async (event) => {
+  leadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(notifyForm);
-    const email = (formData.get("email") || "").toString().trim();
+    const formData = new FormData(leadForm);
 
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = "送出中…";
     }
 
-    const ok = await postNotifyToGmailAppsScript({ email });
+    const ok = await postLeadToGmailAppsScript({
+      name: (formData.get("name") || "").toString().trim(),
+      company: (formData.get("company") || "").toString().trim(),
+      email: (formData.get("email") || "").toString().trim(),
+      phone: (formData.get("phone") || "").toString().trim(),
+      industry: (formData.get("industry") || "").toString().trim(),
+      headcount: (formData.get("headcount") || "").toString().trim(),
+      hasNurse: (formData.get("hasNurse") || "").toString().trim(),
+      currentTool: (formData.get("currentTool") || "").toString().trim(),
+      interestedFeature: (formData.get("interestedFeature") || "").toString().trim(),
+      topic: "[宸護 v2 草稿頁] 預約系統展示",
+    });
 
-    notifyStatus.removeAttribute("hidden");
-    notifyStatus.textContent = ok
-      ? "感謝留下 Email，宸護正式上線時會通知你！"
-      : `送出失敗，請直接寄信至 ${CONTACT_MAILTO} 通知我們。`;
+    leadStatus.removeAttribute("hidden");
+    leadStatus.textContent = ok
+      ? "已收到您的資料，我們會盡快與您聯繫安排系統展示！"
+      : `送出失敗，請直接寄信至 ${CONTACT_MAILTO} 與我們聯繫。`;
 
     if (ok) {
-      notifyForm.reset();
+      leadForm.reset();
     }
 
     if (submitButton) {

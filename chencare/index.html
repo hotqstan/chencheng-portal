@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>宸護 ChenCare｜企業職護健康管理平台</title>
+    <title>宸護 ChenCare｜企業員工健康管理平台</title>
     <meta
       name="description"
-      content="宸護 ChenCare 是企業職護健康管理平台，讓職護服務有紀錄，讓企業責任有依據。協助企業職護把健檢、問卷、附表八、年度計畫與個案追蹤串成一套可交代、可驗證的作業系統。即將推出。"
+      content="宸護 ChenCare 是企業員工健康管理平台，協助職護整理健檢與問卷資料、及早看見需要關心的員工，把訪談、衛教與追蹤的歷程留下來。專業判斷留給職護，繁瑣工作交給系統。即將推出。"
     />
-    <meta property="og:title" content="宸護 ChenCare｜企業職護健康管理平台" />
-    <meta property="og:description" content="讓職護服務有紀錄，讓企業責任有依據。" />
+    <meta property="og:title" content="宸護 ChenCare｜企業員工健康管理平台" />
+    <meta property="og:description" content="專業判斷留給職護，繁瑣工作交給系統。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://care.chenchengtech.com/" />
     <link rel="canonical" href="https://care.chenchengtech.com/" />
@@ -21,7 +21,7 @@
         <img class="brand-logo" src="assets/brand/chencheng-logo.png" alt="" />
         <span>
           <strong>宸護 <span style="font-weight:700;color:var(--muted)">ChenCare</span></strong>
-          <small class="brand-tagline">企業職護健康管理平台</small>
+          <small class="brand-tagline">企業員工健康管理平台</small>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-label="開啟導覽" aria-expanded="false" data-nav-toggle>
@@ -29,339 +29,415 @@
         <span></span>
       </button>
       <nav class="nav-links" aria-label="主導覽" data-nav-menu>
+        <a href="#process">如何運作</a>
         <a href="#pillars">核心價值</a>
-        <a href="#plans">服務對象</a>
-        <a href="#features">核心功能</a>
-        <a href="#journey">客戶旅程</a>
+        <a href="#features">主要功能</a>
         <a href="#compare">為什麼選宸護</a>
+        <a href="#security">資料安全</a>
         <a href="#faq">常見問題</a>
-        <a class="nav-cta" href="#notify">搶先體驗</a>
+        <a class="nav-cta" href="#notify">預約系統展示</a>
       </nav>
     </header>
 
     <main id="top">
 
-      <!-- ── Hero ── -->
-      <section class="hero hero--system">
-        <div class="hero-copy">
-          <p class="signature">即將推出 · 企業職護健康管理平台</p>
-          <h1 class="hero-product-name">企業職護健康管理平台</h1>
-          <p class="hero-headline">讓職護服務有紀錄，讓企業責任有依據</p>
-          <div class="accent-chips hero-scope-chips" aria-label="服務對象">
-            <span>企業職護</span>
-            <span>顧問公司（即將推出）</span>
-            <span>個人職護（即將推出）</span>
-          </div>
-          <p class="hero-lede">
-            把健檢、問卷、附表八、年度計畫與個案追蹤，串成一套可交代、可驗證的作業系統，替企業職護省下大量人工彙整時間、大幅減少紙本作業。取代 Excel 與紙本，法規 PDF 一次產出。
+      <!-- ── Hero（v2 草稿：陽光活力／年輕有活力） ── -->
+      <section class="hero hero--vitality">
+        <div class="hero-vitality-copy">
+          <p class="signature signature--vital">即將推出</p>
+          <h1 class="hero-vitality-title">企業員工健康管理系統</h1>
+          <p class="hero-vitality-lede">
+            從健檢、健康問卷、風險辨識、專業訪談到個案追蹤，協助企業與專任職護建立完整且持續運作的員工健康管理流程。
           </p>
-          <div class="hero-actions" aria-label="主要行動">
-            <a class="button primary" href="#notify">留 Email，搶先體驗</a>
-            <a class="button secondary" href="#features">看核心功能</a>
+          <p class="hero-vitality-sub">
+            讓企業不只完成法定健康管理工作，也能清楚掌握健康風險、服務進度與追蹤結果，降低因資料分散、紀錄缺漏與追蹤中斷所產生的管理風險。
+          </p>
+          <div class="hero-actions hero-vitality-actions" aria-label="主要行動">
+            <a class="button vital-primary" href="#notify">預約產品介紹</a>
+            <a class="button vital-secondary" href="#features">查看系統功能</a>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="企業職護作業流程示意">
-          <div class="system-lifecycle" aria-label="宸護企業職護作業流程">
-            <p class="system-lifecycle-label">企業職護作業流程</p>
-            <ol class="system-lifecycle-flow system-lifecycle-flow--six">
-              <li><span>01</span><strong>健檢問卷匯入</strong><em>Excel／FHIR 匯入</em></li>
-              <li><span>02</span><strong>自動分級</strong><em>健檢與問卷結果</em></li>
-              <li><span>03</span><strong>法規表單產出</strong><em>附表八．年度計畫</em></li>
-              <li><span>04</span><strong>追蹤個案</strong><em>分級與看板</em></li>
-              <li><span>05</span><strong>儀表板掌握</strong><em>進度與報表</em></li>
-              <li><span>06</span><strong>員工 Portal</strong><em>查詢健檢問卷</em></li>
-            </ol>
-            <div class="system-lifecycle-meta">
-              <div>
-                <span>服務對象</span>
-                <strong>企業職護（顧問公司．個人職護 即將推出）</strong>
-              </div>
-              <div>
-                <span>涵蓋法規表單</span>
-                <strong>附表八．年度計劃．危害評估．母性健康</strong>
-              </div>
-            </div>
+        <div class="hero-vitality-visual" aria-label="職護與員工健康訪談情境">
+          <div class="hero-vitality-sun" aria-hidden="true"></div>
+          <div class="hero-vitality-photo-frame">
+            <img src="assets/website/photo-nurse-interview.png" alt="職護與員工進行健康訪談的情境畫面" loading="lazy" />
           </div>
+          <div class="hero-vitality-chip hero-vitality-chip--tl">服務對象：企業職護</div>
+          <div class="hero-vitality-chip hero-vitality-chip--br">看見健康風險，持續追蹤重要個案，留下完整管理紀錄。</div>
+        </div>
+
+        <!-- ── 大弧線分區裝飾（陽光活力配色，不放插畫）：疊在首屏底部，讓弧線上方透出首屏原本的漸層，避免接縫 ── -->
+        <div class="section-wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="sectionWaveGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" style="stop-color: var(--vital-sun-2);" />
+                <stop offset="100%" style="stop-color: var(--vital-green-2);" />
+              </linearGradient>
+            </defs>
+            <path d="M0,35 C 280,95 520,0 760,25 C 1020,52 1200,85 1440,20 L1440,100 L0,100 Z" fill="url(#sectionWaveGradient)" />
+          </svg>
         </div>
       </section>
 
-      <!-- ── 核心價值 ── -->
+      <!-- ── 第二區（v2 草稿：延續陽光活力視覺語言） ── -->
+      <section class="section pain-vitality" id="scattered">
+        <div class="section-heading narrow">
+          <p class="eyebrow eyebrow--vital">現況痛點</p>
+          <h2 class="pain-vitality-title">員工健康管理，<br />往往分散在太多工具裡</h2>
+        </div>
+
+        <div class="pain-vitality-layout">
+          <div class="pain-vitality-copy">
+            <p>健檢資料放在 Excel，問卷結果另外統計，訪談紀錄存在 Word，個案追蹤依賴行事曆，到了年底，再重新整理年度成果與法規文件。</p>
+            <p>每一項工作看似都完成了，但資料、流程與追蹤並沒有真正連在一起。</p>
+            <p>當員工人數增加、健康資料逐年累積，真正困難的就不再只是資料整理，而是：</p>
+          </div>
+
+          <ul class="pain-vitality-checklist">
+            <li>哪些員工需要優先關心</li>
+            <li>哪些個案仍在追蹤</li>
+            <li>哪些訪談尚未完成</li>
+            <li>哪些改善事項還沒處理</li>
+            <li>人員異動後，工作是否能延續</li>
+          </ul>
+        </div>
+
+        <div class="pain-vitality-resolve">
+          <p>宸護將健檢、問卷、訪談、個案與服務紀錄集中在同一套流程中，讓職護不必再依靠多份檔案與個人記憶管理員工健康。</p>
+        </div>
+      </section>
+
+      <!-- ── 03 宸護如何運作 ── -->
+      <section class="section process-vitality" id="process">
+        <div class="section-heading narrow">
+          <p class="eyebrow eyebrow--vital">宸護如何運作</p>
+          <h2 class="vitality-heading">從健康資料開始，<br />建立持續運作的管理流程</h2>
+        </div>
+
+        <ol class="vflow" aria-label="宸護健康管理流程">
+          <li class="vflow-step">
+            <span class="vflow-badge">01</span>
+            <h3>蒐集健康資料</h3>
+            <p>整合員工健檢、健康問卷與歷年健康資料，建立完整的個人健康基礎。</p>
+          </li>
+          <li class="vflow-step">
+            <span class="vflow-badge">02</span>
+            <h3>辨識健康風險</h3>
+            <p>系統依健檢與問卷結果，自動協助辨識異常與初步分級；職護可依專業判斷調整並保留判定歷程。</p>
+          </li>
+          <li class="vflow-step">
+            <span class="vflow-badge">03</span>
+            <h3>進行專業介入</h3>
+            <p>針對需要關心的員工，安排職護訪談、職醫面談、健康指導、工作適性評估及相關建議。</p>
+          </li>
+          <li class="vflow-step">
+            <span class="vflow-badge">04</span>
+            <h3>持續追蹤重要個案</h3>
+            <p>建立健康個案、設定追蹤日期與待辦，完整保留每一次處理紀錄。</p>
+          </li>
+          <li class="vflow-step">
+            <span class="vflow-badge">05</span>
+            <h3>累積管理成果</h3>
+            <p>日常訪談、個案追蹤、臨場服務、改善事項與年度計畫，持續累積為完整紀錄與年度成果。</p>
+          </li>
+        </ol>
+
+        <p class="vflow-summary">蒐集健康資料 → 辨識健康風險 → 專業介入 → 持續追蹤 → 累積管理成果</p>
+      </section>
+
+      <!-- ── 04 三個核心價值 ── -->
       <section class="section" id="pillars">
         <div class="section-heading narrow">
-          <p class="eyebrow">核心主張</p>
-          <h2>法規交付可驗證，歷程可追溯</h2>
-          <p>專業判斷留給你，交付與歷程幫你留住；出事能交代，平常做得穩。</p>
+          <p class="eyebrow eyebrow--vital">核心價值</p>
         </div>
-        <div class="pillars">
+        <div class="pillars pillars--vitality">
           <article>
-            <img class="pillar-icon" src="assets/website/pillar-verifiable.png" alt="" loading="lazy" />
-            <h3>法規交付可驗證</h3>
-            <p>每一次交付都留下可查核的依據。</p>
+            <img class="pillar-icon pillar-icon--shot" src="assets/website/screenshot-metabolic-radar.png" alt="宸護代謝雷達圖畫面，顯示健檢指標與臨床閾值比對" loading="lazy" />
+            <h3>看見員工健康風險</h3>
+            <p>整合健檢、健康問卷與歷年資料，由系統協助辨識異常，再由職護依專業判斷確認。</p>
+            <p class="pillar-quote">從大量健康資料中，及早找出需要優先關心的員工。</p>
           </article>
           <article>
-            <img class="pillar-icon" src="assets/website/pillar-traceable.png" alt="" loading="lazy" />
-            <h3>歷程可追溯</h3>
-            <p>成交後資料不斷裂，全程有跡可循。</p>
+            <img class="pillar-icon pillar-icon--shot" src="assets/website/screenshot-hazard-grading-table.png" alt="宸護個案追蹤表格畫面，顯示未面談、持續追蹤、已完成與完成進度" loading="lazy" />
+            <h3>讓重要個案持續被追蹤</h3>
+            <p>從職護訪談、職醫評估、健康指導到個案追蹤，設定日期、待辦與提醒，完整保留每次處理。</p>
+            <p class="pillar-quote">從發現異常到持續追蹤，讓重要個案不被遺漏。</p>
           </article>
           <article>
-            <img class="pillar-icon" src="assets/website/pillar-sla.png" alt="" loading="lazy" />
-            <h3>執行與審查有 SLA</h3>
-            <p>排程、審查各節點時限透明可控。</p>
-          </article>
-          <article>
-            <img class="pillar-icon" src="assets/website/pillar-triage.png" alt="" loading="lazy" />
-            <h3>健檢問卷驅動分級</h3>
-            <p>依健檢與問卷結果自動個案分級追蹤。</p>
+            <img class="pillar-icon pillar-icon--shot" src="assets/website/年度計劃_美化模糊.png" alt="宸護年度計畫畫面，顯示行政、環境、健康管理等執行項目與預定執行月份" loading="lazy" />
+            <h3>讓企業健康責任有完整紀錄</h3>
+            <p>訪談、專業建議、臨場服務、改善事項、年度計畫與法規文件，都在日常工作中持續累積。</p>
+            <p class="pillar-quote">讓每一次健康管理工作都有紀錄，企業也有清楚依據。</p>
           </article>
         </div>
       </section>
 
-      <!-- ── 為什麼企業需要宸護 ── -->
-      <section class="section" id="why">
+      <!-- ── 05 主要功能總覽 ── -->
+      <section class="section features features--vitality" id="features">
         <div class="section-heading narrow">
-          <p class="eyebrow">為什麼重要</p>
-          <h2>法規義務，宸護幫你留下證據</h2>
-          <p>依職業安全衛生法規定，企業需配置或委託臨場服務並留存執行紀錄；宸護把每一次交付變成可查核、可交代的資料。</p>
+          <p class="eyebrow eyebrow--vital">主要功能</p>
         </div>
-        <div class="importance-grid">
-          <article class="importance-card">
-            <img class="importance-icon" src="assets/website/importance-compliance.png" alt="" loading="lazy" />
-            <span>法規遵循</span>
-            <h3>臨場服務義務不漏接</h3>
-            <p>附表八、年度計畫、危害評估依規定產出並留存版本，勞檢與稽核來臨不必臨時翻找。</p>
-          </article>
-          <article class="importance-card">
-            <img class="importance-icon" src="assets/website/importance-triage.png" alt="" loading="lazy" />
-            <span>風險管理</span>
-            <h3>個案風險提早看見</h3>
-            <p>健檢與問卷結果自動分級，人因、過勞、母性等個案有追蹤看板，不再等出事才知道。</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- ── 為誰而設計 ── -->
-      <section class="section" id="plans">
-        <div class="section-heading narrow">
-          <p class="eyebrow">服務對象</p>
-          <h2>同一平台，三種工作型態</h2>
-          <p>首波推出企業版，服務企業內部職護；專業版、個人版將於後續階段開放，顧問公司與個人職護敬請期待。</p>
-        </div>
-        <div class="scope-grid">
-          <article>
-            <span>企業版・現正開放</span>
-            <h3>宸護 企業版</h3>
-            <p><strong>企業職護</strong> — 內部案場與年度計畫集中管理，職護與 HR 同一套數據，對上交代有跡可循。</p>
-          </article>
-          <article>
-            <span>專業版・即將推出</span>
-            <h3>宸護 專業版</h3>
-            <p><strong>顧問公司</strong> — 多案場派案、合約與附表八審查 SLA，交付可驗證，PM 掌握待審與送客戶進度。</p>
-          </article>
-          <article>
-            <span>個人版・即將推出</span>
-            <h3>宸護 個人版</h3>
-            <p><strong>個人職護</strong> — 輕量訂閱，接案與報告流程不從零開始；個人也能用企業級可交代流程。</p>
-          </article>
-        </div>
-        <p style="margin:24px auto 0;max-width:620px;text-align:center;color:var(--muted);font-size:14px;">
-          規劃中：<strong class="brand-name-highlight">宸護智寫</strong> — AI 報告草稿，專業人員審核定稿。
-        </p>
-      </section>
-
-      <!-- ── 核心功能 ── -->
-      <section class="section features" id="features">
-        <div class="section-heading narrow">
-          <p class="eyebrow">核心功能</p>
-          <h2>從健檢到追蹤，每一步都在<span class="nobr">系統裡</span></h2>
-          <p>宸護把職護臨場服務整合成一套可執行、可驗證、可保存的作業系統，不再依賴 Excel 與紙本。</p>
-        </div>
-        <div class="features-grid">
-
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--intake" aria-hidden="true"></div>
+        <div class="features-grid features-grid--vitality">
+          <article class="feature-card feature-card--vitality">
+            <div class="feature-shot">
+              <div class="feature-shot-frame">
+                <img src="assets/website/血脂比例趨勢分析_產品展示活版.png" alt="宸護血脂比例趨勢分析畫面，顯示歷年健檢數值變化" loading="lazy" />
+              </div>
+            </div>
             <div class="feature-body">
-              <span class="feature-index">01</span>
-              <h3>案場與服務範圍管理</h3>
-              <p>內部案場、合約範疇與服務對象一次到位，企業職護與 HR 資料一致，避免版本與對象搞混。</p>
+              <h3>健檢與歷年健康資料</h3>
+              <p>匯入一般、定期與特殊健檢資料，辨識異常並比較歷年變化。</p>
             </div>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--investigation" aria-hidden="true"></div>
+          <article class="feature-card feature-card--vitality">
+            <div class="feature-shot">
+              <div class="feature-shot-frame">
+                <img src="assets/website/健康問卷與風險分級_產品展示活版.png" alt="宸護個案分級畫面，顯示風險分級指標" loading="lazy" />
+              </div>
+            </div>
             <div class="feature-body">
-              <span class="feature-index">02</span>
-              <h3>排程與試算</h3>
-              <p>智慧試排、衝突檢核、顧問行事曆整合，安排更快更準。</p>
+              <h3>健康問卷與風險分級</h3>
+              <p>支援員工自行填寫、自動計分、初步風險分級與職護人工調整。</p>
             </div>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--review" aria-hidden="true"></div>
+          <article class="feature-card feature-card--vitality">
+            <div class="feature-shot">
+              <div class="feature-shot-frame">
+                <img src="assets/website/預約訪談_產品展示活版.png" alt="宸護預約訪談畫面，顯示訪談表單與行事曆同步" loading="lazy" />
+              </div>
+            </div>
             <div class="feature-body">
-              <span class="feature-index">03</span>
-              <h3>執行與審查 SLA</h3>
-              <p>附表八、審查時間軸、三色警示，手寫簽章一鍵產出 PDF。</p>
+              <h3>職護與職醫訪談</h3>
+              <p>管理排程、通知、訪談紀錄、健康指導、適性評估與工作建議。</p>
             </div>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--archive" aria-hidden="true"></div>
+          <article class="feature-card feature-card--vitality">
+            <div class="feature-shot">
+              <div class="feature-shot-frame">
+                <img src="assets/website/追蹤管理_產品展示活版.png" alt="宸護追蹤管理畫面，顯示待辦事項與面談結果" loading="lazy" />
+              </div>
+            </div>
             <div class="feature-body">
-              <span class="feature-index">04</span>
-              <h3>健檢匯入與分級</h3>
-              <p>Excel／FHIR 匯入，健檢結果自動分級，不必人工對照。</p>
+              <h3>健康個案持續追蹤</h3>
+              <p>建立個案、設定負責人與追蹤日期，管理待辦、提醒、結案與重新開啟。</p>
             </div>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--improvement" aria-hidden="true"></div>
+          <article class="feature-card feature-card--vitality">
+            <div class="feature-shot">
+              <div class="feature-shot-frame">
+                <img src="assets/website/服務排程_產品展示活版.png" alt="宸護臨場服務排程規劃畫面，顯示全年度服務日期" loading="lazy" />
+              </div>
+            </div>
             <div class="feature-body">
-              <span class="feature-index">05</span>
-              <h3>問卷與個案追蹤</h3>
-              <p>人因、過勞、母性等問卷看板，個案分級持續追蹤不中斷。</p>
+              <h3>臨場健康服務</h3>
+              <p>管理服務排程、時數、訪視、健康促進、教育訓練、改善建議與服務報告。</p>
             </div>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--permission" aria-hidden="true"></div>
+          <article class="feature-card feature-card--vitality">
+            <div class="feature-shot">
+              <div class="feature-shot-frame">
+                <img src="assets/website/年度計畫與法規紀錄_產品展示活版.png" alt="宸護年度健康服務報告畫面，顯示執行項目、完成狀態、訪談紀錄與服務報告" loading="lazy" />
+              </div>
+            </div>
             <div class="feature-body">
-              <span class="feature-index">06</span>
-              <h3>評估與員工 Portal</h3>
-              <p>服務前評估、作業場所危害評估，員工可於 Portal 查詢健檢與問卷。</p>
+              <h3>年度計畫與法規紀錄</h3>
+              <p>將日常工作累積為年度成果、附表八、統計報表、PDF 與查核資料。</p>
             </div>
           </article>
-
-          <article class="feature-card feature-card--wide">
-            <div class="feature-icon feature-icon--dashboard" aria-hidden="true"></div>
-            <div class="feature-body">
-              <span class="feature-index">07</span>
-              <h3>儀表板與報表</h3>
-              <p>健檢、個案、問卷、附表八進度一眼掌握，XLSX 報表隨時匯出。</p>
-            </div>
-            <div class="feature-visual" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
-          </article>
-
         </div>
         <div class="features-cta">
-          <a class="button primary" href="#notify">留 Email，搶先體驗</a>
-          <p>宸護即將推出，留下 Email 掌握上線與功能開放時程。</p>
+          <a class="button vital-secondary" href="#notify">查看完整系統功能</a>
         </div>
       </section>
 
-      <!-- ── 客戶旅程 ── -->
-      <section class="section solution" id="journey">
+      <!-- ── 06 三方價值 ── -->
+      <section class="section stakeholders-vitality" id="stakeholders">
         <div class="section-heading narrow">
-          <p class="eyebrow">使用流程</p>
-          <h2>六步驟一路接好，資料不斷線</h2>
-          <p>從健檢匯入到員工 Portal，宸護把企業職護的年度工作串成同一套可交代的流程。</p>
+          <p class="eyebrow eyebrow--vital">三方價值</p>
         </div>
-        <div class="timeline-columns" aria-label="宸護企業職護作業流程">
-          <div class="timeline-group">
-            <p class="timeline-group-label">資料匯入與分級</p>
-            <ol class="timeline">
-              <li><strong>健檢問卷匯入</strong><span>匯入歷史健檢與問卷資料</span></li>
-              <li><strong>自動分級</strong><span>依健檢與問卷結果自動個案分級</span></li>
-              <li><strong>法規表單產出</strong><span>附表八、年度計畫一次產出</span></li>
-            </ol>
-          </div>
-          <div class="timeline-group">
-            <p class="timeline-group-label">追蹤與呈現</p>
-            <ol class="timeline">
-              <li><strong>追蹤個案</strong><span>看板追蹤人因、過勞、母性個案</span></li>
-              <li><strong>儀表板掌握</strong><span>健檢、個案、問卷進度一次掌握</span></li>
-              <li><strong>員工 Portal</strong><span>員工自行查詢健檢與問卷結果</span></li>
-            </ol>
-          </div>
+        <div class="stakeholder-grid">
+          <article class="stakeholder-card">
+            <p class="stakeholder-role">對企業</p>
+            <p>掌握健康管理執行情況，降低程序缺漏、資料分散與追蹤中斷所產生的管理風險。</p>
+          </article>
+          <article class="stakeholder-card">
+            <p class="stakeholder-role">對專任職護</p>
+            <p>減少重複整理、人工提醒與文件彙整，把時間留給專業判斷、健康關懷與個案追蹤。</p>
+          </article>
+          <article class="stakeholder-card">
+            <p class="stakeholder-role">對員工</p>
+            <p>可查看個人健康資料；健康風險被辨識後，能獲得較持續的訪談、指導與追蹤。</p>
+          </article>
         </div>
       </section>
 
-      <!-- ── 與傳統作法比較 ── -->
+      <!-- ── 07 與既有工具的差異 ── -->
       <section class="section" id="compare">
         <div class="section-heading narrow">
-          <p class="eyebrow">為什麼選宸護</p>
-          <h2>取代 Excel 與紙本的交付方式</h2>
-          <p>系統功能對應實務常見交付文件，交付與歷程都留得住。</p>
+          <p class="eyebrow eyebrow--vital">為什麼選宸護</p>
+          <h2 class="vitality-heading">Excel 用來整理資料，<br />宸護用來持續管理員工健康。</h2>
+          <p>健檢系統完成檢查，宸護接續管理健檢之後的健康工作。</p>
         </div>
-        <div class="compare-grid">
-          <article>
-            <h3>Excel／紙本</h3>
-            <ul>
-              <li>多檔版本難統一</li>
-              <li>附表八與排程分離</li>
-              <li>個案與問卷人工整理</li>
-              <li>審查進度不透明</li>
-            </ul>
-          </article>
-          <article class="is-chencare">
-            <h3>宸護</h3>
-            <ul>
-              <li>年度快照、匯入驗證</li>
-              <li>試排＋附表八＋SLA 一次到位</li>
-              <li>看板＋XLSX 一次產出</li>
-              <li>事件時間軸可回溯</li>
-            </ul>
-          </article>
+
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr><th>工具</th><th>擅長處理</th><th>主要限制</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="工具">Excel</td>
+                <td data-label="擅長處理">資料整理、篩選與簡易統計</td>
+                <td data-label="主要限制">資料分散、版本與公式依賴個人，難以管理長期追蹤與權限。</td>
+              </tr>
+              <tr>
+                <td data-label="工具">紙本／Word</td>
+                <td data-label="擅長處理">完成訪談紀錄與單份文件</td>
+                <td data-label="主要限制">文件彼此不連結，查找、追蹤與年度彙整困難。</td>
+              </tr>
+              <tr>
+                <td data-label="工具">一般健檢系統</td>
+                <td data-label="擅長處理">完成檢查流程與健檢報告</td>
+                <td data-label="主要限制">通常不處理企業收到報告後的訪談、個案與後續追蹤。</td>
+              </tr>
+              <tr>
+                <td data-label="工具">行事曆／待辦工具</td>
+                <td data-label="擅長處理">提醒某項工作</td>
+                <td data-label="主要限制">無法同步呈現員工健康資料、風險判定與歷次處理內容。</td>
+              </tr>
+              <tr class="is-chencare">
+                <td data-label="工具">宸護</td>
+                <td data-label="擅長處理">整合資料、風險、訪談、個案、服務與紀錄</td>
+                <td data-label="主要限制">以完整流程持續管理企業員工健康。</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <!-- ── 常見問題 ── -->
+      <!-- ── 08 資料安全與角色權限 ── -->
+      <section class="section security-vitality" id="security">
+        <div class="section-heading narrow">
+          <p class="eyebrow eyebrow--vital">資料安全</p>
+          <h2 class="vitality-heading">員工健康資料，<br />需要比一般工作資料更審慎地管理</h2>
+          <p>宸護依角色與工作需要區分資料權限。員工只能查看自己的健康資料；專任職護負責日常健康管理；職醫依授權查看需要評估的個案與相關資訊。</p>
+        </div>
+
+        <ul class="security-checklist">
+          <li>角色與資料權限分離</li>
+          <li>敏感資訊依工作需要揭露</li>
+          <li>職醫僅查看被授權的個案</li>
+          <li>員工僅查看個人健康資料</li>
+          <li>重要操作與資料歷程保留</li>
+          <li>資料保存、備份與後續復原機制</li>
+        </ul>
+      </section>
+
+      <!-- ── 09 導入方式 ── -->
+      <section class="section onboarding-vitality" id="onboarding">
+        <div class="section-heading narrow">
+          <p class="eyebrow eyebrow--vital">導入方式</p>
+        </div>
+
+        <ol class="vflow vflow--onboarding" aria-label="宸護導入流程">
+          <li class="vflow-step"><span class="vflow-badge">1</span><h3>了解現況</h3><p>確認企業員工人數、現有健檢與健康管理方式、主要使用者及導入範圍。</p></li>
+          <li class="vflow-step"><span class="vflow-badge">2</span><h3>確認資料</h3><p>盤點員工資料、歷年健檢格式、問卷與既有個案紀錄。</p></li>
+          <li class="vflow-step"><span class="vflow-badge">3</span><h3>建立環境</h3><p>設定企業、帳號、角色與必要權限。</p></li>
+          <li class="vflow-step"><span class="vflow-badge">4</span><h3>匯入資料</h3><p>依確認格式匯入員工與既有健康資料。</p></li>
+          <li class="vflow-step"><span class="vflow-badge">5</span><h3>教育訓練</h3><p>協助專任職護、職醫與必要窗口熟悉日常操作。</p></li>
+          <li class="vflow-step"><span class="vflow-badge">6</span><h3>正式啟用</h3><p>開始管理健檢、問卷、訪談、個案與年度工作。</p></li>
+          <li class="vflow-step"><span class="vflow-badge">7</span><h3>後續支援</h3><p>持續處理使用問題、資料格式與功能調整需求。</p></li>
+        </ol>
+      </section>
+
+      <!-- ── 10 常見問題 ── -->
       <section class="section faq" id="faq">
         <div class="section-heading narrow">
-          <p class="eyebrow">常見問題</p>
-          <h2>常見導入問題</h2>
+          <p class="eyebrow eyebrow--vital">常見問題</p>
+          <h2 class="vitality-heading">常見問題</h2>
         </div>
         <div class="faq-list">
           <details open>
-            <summary>健檢資料怎麼進系統？</summary>
-            <p>目前以 Excel 匯入為主，API 串接規劃在後續版本。</p>
+            <summary>宸護會取代專任職護嗎？</summary>
+            <p>不會。系統協助處理資料整理、風險初步辨識、提醒與紀錄保存；專業判斷、員工溝通、健康指導與適性評估仍由職護與職醫完成。</p>
           </details>
           <details>
-            <summary>企業內部（HR、主管）看得到哪些資料？</summary>
-            <p>採角色權限管理，企業職護可依需求開放對應欄位給 HR 或主管；執行人員僅會看到服務項目與排程欄位。</p>
+            <summary>員工可以看到哪些資料？</summary>
+            <p>員工可登入個人入口查看自己的健康資料，不會看到其他員工資料或職護內部管理資訊。</p>
           </details>
           <details>
-            <summary>專業版、企業版、個人版差在哪？</summary>
-            <p>同一套流程，依服務對象拆分：企業版現正優先開放，給企業內部職護使用；專業版（顧問公司多案場派案）與個人版（個人職護輕量訂閱）將於後續階段開放。實際方案範圍請於洽談時確認。</p>
+            <summary>是否支援不同健檢機構的資料？</summary>
+            <p>支援不同健檢機構資料格式的整理與匯入，實際導入時會先確認欄位與格式。</p>
           </details>
           <details>
-            <summary>宸護會不會取代職護專業判斷？</summary>
-            <p>不會。系統負責排程、交付、留痕與追溯；專業判斷與結論仍由人完成。</p>
+            <summary>系統會自動判定健康風險嗎？</summary>
+            <p>系統會依健檢與問卷資料進行初步判定；職護可以依實際情況與專業判斷調整，並保留原始數據與調整歷程。</p>
           </details>
           <details>
-            <summary>什麼時候可以開始用？</summary>
-            <p>宸護企業版即將優先推出。留下 Email，可收到上線與功能開放通知。</p>
+            <summary>是否能管理特殊健康檢查？</summary>
+            <p>可以，宸護可保存並管理一般、定期、新進與特殊健康檢查資料。</p>
           </details>
           <details>
-            <summary>附表八、年度計劃能不能一次產出？</summary>
-            <p>可以。法規 PDF 與相關表單依流程節點產出，並保留版本與送審紀錄。</p>
+            <summary>是否能持續追蹤個案？</summary>
+            <p>可以。可建立個案、設定負責人、追蹤日期、提醒與狀態，並保留歷次追蹤內容。</p>
           </details>
           <details>
-            <summary>員工可以自己查健檢／問卷嗎？</summary>
-            <p>可以。員工可透過 Portal 查詢健檢與問卷結果。</p>
+            <summary>職醫如何使用？</summary>
+            <p>職醫可依授權查看需要評估的員工資料與健康歷程，進行面談、適性評估並留下專業建議。</p>
           </details>
           <details>
-            <summary>舊 Excel／紙本怎麼交接？</summary>
-            <p>以匯入與年度快照銜接歷史資料，避免成交後資料斷裂。</p>
+            <summary>是否可以產生法規紀錄與年度成果？</summary>
+            <p>可以。日常訪談、臨場服務、追蹤與改善資料可持續累積為年度成果、表單、報表與 PDF 文件。</p>
           </details>
         </div>
       </section>
 
-      <!-- ── 搶先體驗 ── -->
-      <section class="section" id="notify">
+      <!-- ── 11 最終行動入口 ── -->
+      <section class="section cta-vitality" id="notify">
         <div class="section-heading narrow">
-          <p class="eyebrow">即將推出</p>
-          <h2>想第一時間收到上線通知？</h2>
+          <p class="eyebrow eyebrow--vital">最終行動</p>
+          <h2 class="vitality-heading">看看宸護如何配合<br />您的員工健康管理流程</h2>
+          <p>無論目前使用 Excel、紙本或既有健檢資料，宸護都可從企業現況出發，協助整理導入範圍與實際使用方式。</p>
         </div>
-        <div class="notify">
-          <p>留下 Email，宸護正式上線時通知你。</p>
-          <form class="notify-form" data-notify-form>
-            <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
-            <button class="button primary" type="submit">通知我</button>
+
+        <div class="cta-vitality-panel">
+          <form class="cta-vitality-form" data-lead-form>
+            <div class="form-row">
+              <label>公司名稱<input type="text" name="company" autocomplete="organization" required /></label>
+              <label>產業類別<input type="text" name="industry" /></label>
+            </div>
+            <div class="form-row">
+              <label>員工人數<input type="text" name="headcount" placeholder="例如：150 人" /></label>
+              <label>是否已有專任職護
+                <select name="hasNurse">
+                  <option value="">請選擇</option>
+                  <option value="有">有</option>
+                  <option value="沒有">沒有</option>
+                  <option value="規劃中">規劃中</option>
+                </select>
+              </label>
+            </div>
+            <label>目前使用方式<input type="text" name="currentTool" placeholder="例如：Excel、紙本、其他健檢系統" /></label>
+            <label>最想了解的功能<input type="text" name="interestedFeature" /></label>
+            <div class="form-row">
+              <label>聯絡人姓名<input type="text" name="name" autocomplete="name" required /></label>
+              <label>電話<input type="tel" name="phone" autocomplete="tel" /></label>
+            </div>
+            <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+
+            <div class="hero-actions cta-vitality-actions">
+              <button class="button vital-primary" type="submit">預約系統展示</button>
+              <a class="button vital-secondary" href="mailto:chenchengtech.co@gmail.com?subject=%E4%BC%81%E6%A5%AD%E6%96%B9%E6%A1%88%E6%B4%BD%E8%A9%A2">洽詢企業方案</a>
+            </div>
+            <p class="form-status" role="status" data-lead-status hidden></p>
           </form>
-          <p class="notify-status" role="status" data-notify-status hidden></p>
         </div>
       </section>
 
@@ -373,7 +449,7 @@
           <img class="brand-logo" src="assets/brand/chencheng-logo.png" alt="" />
           <span>
             <strong>宸護</strong>
-            <small class="brand-tagline">企業職護健康管理平台</small>
+            <small class="brand-tagline">企業員工健康管理平台</small>
           </span>
         </a>
         <p>讓職護服務有紀錄，讓企業責任有依據。</p>
@@ -383,13 +459,13 @@
       <div>
         <strong>宸誠資訊 CHENCHENG INFOTECH</strong>
         <nav aria-label="頁尾導覽">
+          <a href="#process">如何運作</a>
           <a href="#pillars">核心價值</a>
-          <a href="#plans">服務對象</a>
-          <a href="#features">核心功能</a>
-          <a href="#journey">客戶旅程</a>
+          <a href="#features">主要功能</a>
           <a href="#compare">為什麼選宸護</a>
+          <a href="#security">資料安全</a>
           <a href="#faq">常見問題</a>
-          <a href="#notify">搶先體驗</a>
+          <a href="#notify">預約系統展示</a>
         </nav>
       </div>
     </footer>
