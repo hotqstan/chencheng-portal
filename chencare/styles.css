@@ -5650,54 +5650,17 @@ textarea {
   width: 100%;
   flex-shrink: 0;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
-  padding: 16px;
-  border-bottom: 1px solid var(--line);
-}
-
-.feature-card--vitality:nth-child(odd) .feature-shot {
-  background: linear-gradient(135deg, var(--vital-sun-1), var(--vital-sun-2));
-}
-
-.feature-card--vitality:nth-child(even) .feature-shot {
-  background: linear-gradient(135deg, var(--vital-green-1), var(--vital-green-2));
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  background: var(--paper);
 }
 
 .feature-shot-frame {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 10px;
   overflow: hidden;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 12px 28px rgba(34, 69, 58, 0.22);
-  transition: transform 0.25s ease;
-}
-
-/* 讓截圖卡片像貼歪的拍立得，少一點制式的整齊感 */
-.feature-card--vitality:nth-child(odd) .feature-shot-frame {
-  transform: rotate(-1.6deg);
-}
-
-.feature-card--vitality:nth-child(even) .feature-shot-frame {
-  transform: rotate(1.6deg);
-}
-
-.feature-card--vitality:hover .feature-shot-frame {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.feature-shot--split .feature-shot-half:first-child .feature-shot-frame {
-  transform: rotate(-2.4deg);
-}
-
-.feature-shot--split .feature-shot-half:last-child .feature-shot-frame {
-  transform: rotate(2.4deg);
-}
-
-.feature-card--vitality:hover .feature-shot--split .feature-shot-frame {
-  transform: rotate(0deg);
+  background: transparent;
 }
 
 .feature-card--vitality .feature-shot img {
@@ -5709,17 +5672,13 @@ textarea {
 
 /* 一張卡放兩張圖並排（例如：職護與職醫訪談） */
 .feature-shot--split {
-  gap: 10px;
+  gap: 0;
 }
 
 .feature-shot--split .feature-shot-half {
   position: relative;
   flex: 1 1 50%;
   height: 100%;
-}
-
-.feature-shot--split .feature-shot-half .feature-shot-frame {
-  padding: 6px;
 }
 
 /* 在截圖上標記一個已排定的重點（例如：臨場服務排程） */
